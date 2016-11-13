@@ -10,7 +10,7 @@
 	<properties>
 		<tomcat.version>9.0.0.M4</tomcat.version>
 		<java.version>1.8</java.version>
-		<resteasy.version>3.0.17.Final</resteasy.version>
+		<resteasy.version>3.0.19.Final</resteasy.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,7 +56,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>iot</finalName>
+		<finalName>openshift</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>

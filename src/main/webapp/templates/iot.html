@@ -6,10 +6,27 @@
 	th:href="@{/images/icon.png}" />
 <link href="../css/bootstrap.min.css"
 	th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+<link href="../css/bootstrap-flex.min.css"
+	th:href="@{/css/bootstrap-flex.min.css}" rel="stylesheet"
+	media="screen" />
+<link href="../css/bootstrap-grid.min.css"
+	th:href="@{/css/bootstrap-grid.min.css}" rel="stylesheet"
+	media="screen" />
+<link href="../css/bootstrap-reboot.min.css"
+	th:href="@{/css/bootstrap-reboot.min.css}" rel="stylesheet"
+	media="screen" />
+
+<link href="../css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+
 <link href="../css/cover.css" th:href="@{/css/cover.css}"
 	rel="stylesheet" media="screen" />
 
+<script src="../js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="../js/tether.min.js" th:src="@{/js/tether.min.js}"></script>
 <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="../js/iot.js" th:src="@{/js/iot.js}"></script>
 <title>Openshift IOT Service</title>
 </head>
 
@@ -25,20 +42,25 @@
 					<div class="inner">
 						<h3 class="masthead-brand">IoT</h3>
 						<nav class="nav nav-masthead">
-							<a class="nav-link active" href="#">Home</a> <a class="nav-link"
-								href="#">Pricing</a> <a class="nav-link" href="#">Contact US</a>
+							<a class="nav-link active" href="iot">Home</a> <a
+								class="nav-link" href="#" id="navactions">Actions </a> <a
+								class="nav-link" href="#">Contact US</a>
 						</nav>
 					</div>
 				</div>
 
 				<div class="inner cover">
-					<h1 class="cover-heading">Hook your device!</h1>
-					<p class="lead">Cover is a one-page template for building
-						simple and beautiful home pages. Download, edit the text, and add
-						your own fullscreen background photo to make it your own.</p>
-					<p class="lead">
-						<a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-					</p>
+					<div id="welcome">
+						<h1 class="cover-heading">Register your device!</h1>
+						<p class="lead">Geting involved with IoT is easy and exciting.
+							Register your IoT device and get actions from here!.</p>
+						<p class="lead">
+							<a href="#" id="start" class="btn btn-lg btn-secondary">Getting
+								Started.</a>
+						</p>
+					</div>
+					<div id="device" style="display: none"></div>
+					<div id="actions" style="display: none"></div>
 				</div>
 
 				<div class="mastfoot">

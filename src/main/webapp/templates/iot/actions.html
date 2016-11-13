@@ -1,0 +1,10 @@
+<html>
+<h1 class="cover-heading">Control your device!</h1>
+<div class="card card-inverse text-xs-center card-primary" th:each="a : ${actions}">
+	<h3 class="card-title" th:text="'ACTION : ' + ${a.action}"></h3>
+	<p class="card-text" th:text="'KEY : ' + ${a.key}"></p>
+	<a href="#" class="btn btn-danger">Trigger!</a>
+</div>
+
+</html>
+
