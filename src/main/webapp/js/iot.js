@@ -36,6 +36,22 @@ jQuery(function($) {
 			},
 		});
 	});
+	$(document).on("click", "button[id^=trigger]", function(e) {
+		e.preventDefault()
+		var action = $(this).attr("data-action") 
+		var key = $(this).attr("data-key") 
+		$.ajax({
+			url : '/openshift/rest/iot/trigger/' + action + '/' + key,
+			type : 'POST',
+			beforeSend: function() {
+				$('#trigger-progress-' + action).show()
+			},
+			success : function(data) {
+				$('#trigger-progress-' + action).hide()
+				$('#trigger-response-' + action).html('<div class="alert alert-success" role="alert">' + data.response + '</div>')
+			}
+		});
+	});
 });
 
 function getActions() {

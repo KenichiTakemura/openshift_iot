@@ -78,6 +78,7 @@ public class IotRestService {
 	@Produces("text/html")
 	public Response actions_view(@Context HttpServletRequest request, @Context HttpServletResponse response) {
 		log.info("REST CALL actions_view");
+
 		request.setAttribute("actions", actions.values().stream().collect(Collectors.toList()));
 		WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
 		try {
@@ -92,9 +93,10 @@ public class IotRestService {
 	@POST
 	@Path("/trigger/{action}/{key}")
 	@Produces("application/json")
-	public Response trigger(@Context HttpServletRequest request, @Context HttpServletResponse response) {
-		log.info("REST CALL trigger");
-		return Response.ok().build();
+	public MakerResponse trigger(@Context HttpServletRequest request, @Context HttpServletResponse response,
+			@PathParam("action") String action, @PathParam("key") String key) {
+		log.info("REST CALL trigger {} {}", action, key);
+		return new MakerResponse().setResponse(new MakerChannel().trigger(action, key));
 	}
 
 }
